@@ -8,7 +8,7 @@ func _ready():
 
 func change_state(new_state):
 	state = new_state
-	var material = $MeshInstance2.mesh.surface_get_material(0)
+	var material = $MeshInstance2.get_surface_material(0)
 	if state == "scanning":
 		material.albedo_color = Color(0,1,0)
 	if state == "active":
@@ -17,7 +17,7 @@ func change_state(new_state):
 		material.albedo_color = Color(0,0,1)
 	if state == "shooting":
 		material.albedo_color = Color(1,0,0)
-	$MeshInstance2.set_surface_material(0, material)		
+	$MeshInstance2.set_surface_material(0, material)
 
 
 func _physics_process(delta):
